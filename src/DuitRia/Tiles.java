@@ -1,4 +1,4 @@
-package gamePackage;
+package DuitRia;
 
 import java.util.Scanner;
 
