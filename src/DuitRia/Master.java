@@ -11,6 +11,6 @@ public class Master {
         int dice1 = 3, dice2 = 3;
         //dice roll
         
-        player[turn].movement(dice1, dice2);
+        player[turn].movement(position, totalDice);
     }
 }
