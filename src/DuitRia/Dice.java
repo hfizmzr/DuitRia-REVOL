@@ -1,12 +1,11 @@
-package dice;
+package DuitRia;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Dice {
     
     public static void main(String[] args) {
-        String[] player = {"Player 1", "Player 2", "Player 3", "Player 4"};
+        String[] player = {"Player 1", "Player 2", "Player 3", "Player 4"}; // example
         int[] totalDiceScore = new int[player.length];
         
         playerTurn(player, totalDiceScore);
