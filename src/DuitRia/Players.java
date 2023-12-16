@@ -114,9 +114,9 @@ public class Players {
     
     boolean dead = false;
     
-    public int movement(int position, int dice1, int dice2){
+    public int movement(int position, Dice dice){
             //commit am betulkan movement;
-            int totalDice = dice1+dice2;
+            int totalDice = dice.diceRoll();
             position+=totalDice;
             position = position%40;
             if(position>=0 && position < totalDice){
