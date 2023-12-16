@@ -8,7 +8,7 @@ public class Dice {
     //int[] total dice score
     //playerturn(player,totaldicescore);
     
-    private static int diceRoll() {
+    public static int diceRoll() {
         
         Random rand = new Random();
         
