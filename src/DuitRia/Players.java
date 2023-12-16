@@ -8,6 +8,7 @@ public class Players {
 	private String Name;
 	private int Balance;
 	private Map<String, Properties> properties;
+	private int position;
 	
 	
     public int money = 15000000, netWorth = 15000000;
@@ -19,6 +20,7 @@ public class Players {
     	this.Name = name;
     	this.Balance = StartingBalance;
     	this.properties = new HashMap<>();
+	this.position = 0;
     }
     
     //buying properties
