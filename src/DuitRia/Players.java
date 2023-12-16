@@ -113,14 +113,18 @@ public class Players {
     
     
     boolean dead = false;
+    
     public int movement(int position, int dice1, int dice2){
-            position+=dice1+dice2;
-            if(position>=40){
-                position%=10;
+            //commit am betulkan movement;
+            int totalDice = dice1+dice2;
+            position+=totalDice;
+            position = position%40;
+            if(position>=0 && position < totalDice){
                 salary();
             }
         return position;
     }
+    
     
     public void salary(){
         System.out.println("You just past GO(Collect RM 2M)");
