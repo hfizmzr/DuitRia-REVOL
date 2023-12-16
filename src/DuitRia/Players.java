@@ -6,9 +6,9 @@ import java.util.Map;
 public class Players {
     
 	private String Name;
-	private int Balance;
+	public int Balance;
 	private Map<String, Properties> properties;
-	private int position;
+	public int position;
 
 	
 	
