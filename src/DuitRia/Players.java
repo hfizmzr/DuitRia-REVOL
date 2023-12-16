@@ -9,7 +9,7 @@ public class Players {
 	private int Balance;
 	private Map<String, Properties> properties;
 	private int position;
-	private String testString = "test";
+
 	
 	
     public int money = 15000000, netWorth = 15000000;
