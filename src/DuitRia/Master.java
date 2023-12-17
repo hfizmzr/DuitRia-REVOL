@@ -55,7 +55,7 @@ public class Master {
     }
     
     public static void initializeTiles(Tiles[] tile){//Hazim: create object for tiles in the array
-        tile[0] = new Go();
+        tile[0] = new Nothing("Go");
         tile[1] = new PetalingStreet();
         tile[2] = new FateTile();
         tile[3] = new JonkerStreet();
@@ -65,7 +65,7 @@ public class Master {
         tile[7] = new FateTile();
         tile[8] = new BatuCaves();
         tile[9] = new SriMahaMariammanTemple(); 
-        tile[10] = new JailTile();
+        tile[10] = new Nothing("Visiting jail");
         tile[11] = new NationalMuseum();
         tile[12] = new TenagaNationalBerhad();
         tile[13] = new RoyalPalace();
@@ -75,7 +75,7 @@ public class Master {
         tile[17] = new FateTile();
         tile[18] = new KellieCastle();
         tile[19] = new Stadthuys();
-        tile[20] = new FreeParking();
+        tile[20] = new Nothing("Free Parking");
         tile[21] = new FraserHill();
         tile[22] = new FateTile();
         tile[23] = new CameronHighlands();

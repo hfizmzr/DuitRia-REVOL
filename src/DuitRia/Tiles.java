@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Tiles{
     public int house = 0, housePrice, landPrice, owner = -1;
-    public boolean mortgaged = false, fate = false, tax = false, station = false, commodity = false, jail = false, go = false, unowned = true;
+    public boolean mortgaged = false, fate = false, tax = false, station = false, commodity = false, jail = false, go = false, unowned = true, nothing = true, goToJail = true;
     String name;
     
     public void mortgage(Players player){
@@ -55,48 +55,6 @@ class SriMahaMariammanTemple extends Tiles{
     }
 }
 
-class FateTile extends Tiles{
-    FateTile(){
-        this.fate = true;
-        this.name = "Fate";
-    }
-}
-
-class Tax extends Tiles{
-    Tax(){
-        this.tax = true;
-        this.name = "Tax";
-    }
-} 
-
-class Station extends Tiles{
-    Station(String name){
-        this.station = true;
-        this.name = name;
-    }
-}
-
-class Commodity extends Tiles{
-    Commodity(String name){
-        this.commodity = true;
-        this.name = name;
-    }
-} 
-
-class JailTile extends Tiles{
-    JailTile(){
-        this.jail = true;
-        this.name = "Jail";
-    }
-}
-
-class Go extends Tiles{
-    Go(){
-        this.go = true;
-        this.name = "go";
-    }
-}
-
 class NationalMuseum extends Tiles {
     NationalMuseum() {
         this.name = "National Meseum";
@@ -104,8 +62,9 @@ class NationalMuseum extends Tiles {
     }
 }
 
-class TenagaNationalBerhad extends Tiles {
-    TenagaNationalBerhad() {
+class TenagaNationalBerhad extends Tiles{
+    TenagaNationalBerhad(){
+        this.commodity = true;
         this.name = "Tenaga National Berhad";
         this.landPrice = 1500000;
     }
@@ -145,13 +104,7 @@ class Stadthuys extends Tiles {
         this.landPrice = 2000000;
     }
 }
-
-class FreeParking extends Tiles {
-    FreeParking() {
-        this.name = "Free Parking";
-    }
-}
-
+    
 class FraserHill extends Tiles {
     FraserHill() {
         this.name = "Fraser's Hill";
@@ -201,12 +154,6 @@ class KinabaluNationalPark extends Tiles {
     }
 }
 
-class GoToJail extends Tiles {
-    GoToJail() {
-        this.name = "Go To Jail";
-    }
-}
-
 class TiomanIslands extends Tiles {
     TiomanIslands() {
         this.name = "Tioman Islands";
@@ -241,4 +188,40 @@ class Sepang2Circuit extends Tiles {
         this.landPrice = 4000000;
     }
 }
-//
+//  
+
+class FateTile extends Tiles{
+    FateTile(){
+        this.fate = true;
+        this.name = "Fate";
+    }
+}
+
+class Tax extends Tiles{
+    Tax(){
+        this.tax = true;
+        this.name = "Tax";
+    }
+} 
+
+class Station extends Tiles{
+    Station(String name){
+        this.station = true;
+        this.name = name;
+        this.landPrice = 2000000;
+    }
+}
+
+class Nothing extends Tiles{
+    Nothing(String name){
+        this.nothing = true;
+           this.name = name;
+    }
+}
+
+class GoToJail extends Tiles{
+    GoToJail(){
+        this.goToJail = true;
+        this.name = "Go to jail!!!";
+    }
+}

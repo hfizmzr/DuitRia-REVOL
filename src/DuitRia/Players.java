@@ -108,7 +108,7 @@ public class Players {
 
     public void movement(Dice dice){
             //commit am betulkan movement;
-            System.out.print("It is " + Name + " turn");//Hazim: tambah prompt.
+            System.out.print("\nIt is " + Name + " turn");//Hazim: tambah prompt.
             sc.nextLine();
             int totalDice = dice.diceRoll();
             System.out.println(Name + " rolled " + totalDice);
