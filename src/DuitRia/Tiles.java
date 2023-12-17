@@ -172,3 +172,72 @@ class GentingHighland extends Tiles {
         this.landPrice = 2200000;
     }
 }
+
+class PahangNationalPark extends Tiles {
+    PahangNationalPark() {
+        this.name = "Pahang National Park";
+        this.landPrice = 2600000;
+    }
+}
+
+class JabatanBekalanAir extends Tiles {
+    JabatanBekalanAir() {
+        this.name = "Jabatan Bekalan Air";
+        this.landPrice = 1500000;
+    }
+}
+
+class GunungMuluNationalPark extends Tiles {
+    GunungMuluNationalPark() {
+        this.name = "Gunun Mulu National Park";
+        this.landPrice = 2600000;
+    }
+}
+
+class KinabaluNationalPark extends Tiles {
+    KinabaluNationalPark() {
+        this.name = "Kinabalu National Park";
+        this.landPrice = 2700000;
+    }
+}
+
+class GoToJail extends Tiles {
+    GoToJail() {
+        this.name = "Go To Jail";
+    }
+}
+
+class TiomanIslands extends Tiles {
+    TiomanIslands() {
+        this.name = "Tioman Islands";
+        this.landPrice = 3000000;
+    }
+}
+
+class PerhentianIslands extends Tiles {
+    PerhentianIslands() {
+        this.name = "Perhentian Islands";
+        this.landPrice = 3000000;
+    }
+}
+
+class SepadanIslands extends Tiles {
+    SepadanIslands() {
+        this.name = "Sepadan Islands";
+        this.landPrice = 3200000;
+    }
+}
+
+class KLCC extends Tiles {
+    KLCC() {
+        this.name = "KLCC";
+        this.landPrice = 3500000;
+    }
+}
+
+class Sepang2Circuit extends Tiles {
+    Sepang2Circuit() {
+        this.name = "Sepang II Circuit";
+        this.landPrice = 4000000;
+    }
+}
