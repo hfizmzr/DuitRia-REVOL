@@ -50,7 +50,7 @@ class BatuCaves extends Tiles{
 }
 class SriMahaMariammanTemple extends Tiles{
     SriMahaMariammanTemple(){
-        this.name = "SriMahaMariammanTemple";
+        this.name = "Sri Maha Mariamman Temple";
         this.landPrice = 1200000;
     }
 }
@@ -96,3 +96,149 @@ class Go extends Tiles{
         this.name = "go";
     }
 }
+
+class NationalMuseum extends Tiles {
+    NationalMuseum() {
+        this.name = "National Meseum";
+        this.landPrice = 1400000;
+    }
+}
+
+class TenagaNationalBerhad extends Tiles {
+    TenagaNationalBerhad() {
+        this.name = "Tenaga National Berhad";
+        this.landPrice = 1500000;
+    }
+}
+
+class RoyalPalace extends Tiles {
+    RoyalPalace() {
+        this.name = "Royal Palace";
+        this.landPrice = 1400000;
+    }
+}
+
+class MerdekaSquare extends Tiles {
+    MerdekaSquare() {
+        this.name = "Merdeka Square";
+        this.landPrice = 1400000;
+    }
+}
+
+class AFamosaFort extends Tiles {
+    AFamosaFort() {
+        this.name = "A Famosa Fort";
+        this.landPrice = 1700000;
+    }
+}
+
+class KellieCastle extends Tiles {
+    KellieCastle() {
+        this.name = "Kellie Castle";
+        this.landPrice = 1800000;
+    }
+}
+
+class Stadthuys extends Tiles {
+    Stadthuys() {
+        this.name = "Stadthuys";
+        this.landPrice = 2000000;
+    }
+}
+
+class FreeParking extends Tiles {
+    FreeParking() {
+        this.name = "Free Parking";
+    }
+}
+
+class FraserHill extends Tiles {
+    FraserHill() {
+        this.name = "Fraser's Hill";
+        this.landPrice = 2200000;
+    }
+}
+
+class CameronHighlands extends Tiles {
+    CameronHighlands() {
+        this.name = "Cameron Highlands";
+        this.landPrice = 2200000;
+    }
+}
+
+class GentingHighland extends Tiles {
+    GentingHighland() {
+        this.name = "Genting Highland";
+        this.landPrice = 2200000;
+    }
+}
+
+class PahangNationalPark extends Tiles {
+    PahangNationalPark() {
+        this.name = "Pahang National Park";
+        this.landPrice = 2600000;
+    }
+}
+
+class JabatanBekalanAir extends Tiles {
+    JabatanBekalanAir() {
+        this.name = "Jabatan Bekalan Air";
+        this.landPrice = 1500000;
+    }
+}
+
+class GunungMuluNationalPark extends Tiles {
+    GunungMuluNationalPark() {
+        this.name = "Gunun Mulu National Park";
+        this.landPrice = 2600000;
+    }
+}
+
+class KinabaluNationalPark extends Tiles {
+    KinabaluNationalPark() {
+        this.name = "Kinabalu National Park";
+        this.landPrice = 2700000;
+    }
+}
+
+class GoToJail extends Tiles {
+    GoToJail() {
+        this.name = "Go To Jail";
+    }
+}
+
+class TiomanIslands extends Tiles {
+    TiomanIslands() {
+        this.name = "Tioman Islands";
+        this.landPrice = 3000000;
+    }
+}
+
+class PerhentianIslands extends Tiles {
+    PerhentianIslands() {
+        this.name = "Perhentian Islands";
+        this.landPrice = 3000000;
+    }
+}
+
+class SepadanIslands extends Tiles {
+    SepadanIslands() {
+        this.name = "Sepadan Islands";
+        this.landPrice = 3200000;
+    }
+}
+
+class KLCC extends Tiles {
+    KLCC() {
+        this.name = "KLCC";
+        this.landPrice = 3500000;
+    }
+}
+
+class Sepang2Circuit extends Tiles {
+    Sepang2Circuit() {
+        this.name = "Sepang II Circuit";
+        this.landPrice = 4000000;
+    }
+}
+//
