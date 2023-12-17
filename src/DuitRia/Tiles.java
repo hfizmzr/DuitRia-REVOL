@@ -241,3 +241,4 @@ class Sepang2Circuit extends Tiles {
         this.landPrice = 4000000;
     }
 }
+//
