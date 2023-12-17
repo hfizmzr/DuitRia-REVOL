@@ -2,14 +2,15 @@ package DuitRia;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Players {
     
-	private String Name;
+	public String Name; // change to public *Hazim
 	public int Balance;
 	private Map<String, Properties> properties;
-	public int position;
-
+	public int position = 0;
+        Scanner sc = new Scanner(System.in);
 	
 	
     public int money = 15000000, netWorth = 15000000;
@@ -114,15 +115,17 @@ public class Players {
     
     boolean dead = false;
     
-    public int movement(int position, Dice dice){
+    public void movement(Dice dice){
             //commit am betulkan movement;
+            System.out.print("It is " + Name + " turn");//Hazim: tambah prompt.
+            sc.nextLine();
             int totalDice = dice.diceRoll();
+            System.out.println(Name + " rolled " + totalDice);
             position+=totalDice;
             position = position%40;
             if(position>=0 && position < totalDice){
                 salary();
             }
-        return position;
     }
     
     

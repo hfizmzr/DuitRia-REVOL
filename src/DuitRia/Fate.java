@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Fate {
+public class Fate{
     
      public void Advancetogo(int y,Players player1){
  

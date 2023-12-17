@@ -19,7 +19,7 @@ public class Dice {
         return totalDice;
     }
     
-    private static void playerTurn(String[] player, int[] totalDiceScore) {
+    public static void playerTurn(Players[] player, int[] totalDiceScore) { // Hazim:  change String[] to Players[]
         for (int i = 0; i < player.length; i++) {
             int diceRoll = diceRoll();
             totalDiceScore[i] = diceRoll;
@@ -32,18 +32,18 @@ public class Dice {
                 }
             }
             
-            System.out.println(player[i] + " roll " + diceRoll);
+            System.out.println(player[i].Name + " roll " + diceRoll); // Hazim: call by player.Name
         }
         
         placement(player,totalDiceScore);
         
         for (int i = 0; i < player.length; i++) {
-            System.out.println((i+1) + ". " + player[i]);
+            System.out.println((i+1) + ". " + player[i].Name);
         }
     }
     
-    private static void placement(String[] player, int[] totalDiceScore) {
-        
+    private static void placement(Players[] player, int[] totalDiceScore) {//Hazim: String[] to Players []
+                                                                          
         for (int i = 0; i < player.length; i++) {
             for (int j = 0; j < player.length-i-1; j++) {
                 if(totalDiceScore[j] < totalDiceScore[j+1]) {
@@ -52,9 +52,9 @@ public class Dice {
                     totalDiceScore[j] = totalDiceScore[j+1];
                     totalDiceScore[j+1] = temp1;
                     // sort highest to lowest
-                    String temp2 = player[j];
-                    player[j] = player[j+1];
-                    player[j+1] = temp2;
+                    String temp2 = player[j].Name;
+                    player[j].Name = player[j+1].Name;          //Hazim: call name using player[].Name
+                    player[j+1].Name = temp2;
                 }
             }
         }
