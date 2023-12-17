@@ -50,7 +50,7 @@ class BatuCaves extends Tiles{
 }
 class SriMahaMariammanTemple extends Tiles{
     SriMahaMariammanTemple(){
-        this.name = "SriMahaMariammanTemple";
+        this.name = "Sri Maha Mariamman Temple";
         this.landPrice = 1200000;
     }
 }
@@ -94,5 +94,81 @@ class Go extends Tiles{
     Go(){
         this.go = true;
         this.name = "go";
+    }
+}
+
+class NationalMuseum extends Tiles {
+    NationalMuseum() {
+        this.name = "National Meseum";
+        this.landPrice = 1400000;
+    }
+}
+
+class TenagaNationalBerhad extends Tiles {
+    TenagaNationalBerhad() {
+        this.name = "Tenaga National Berhad";
+        this.landPrice = 1500000;
+    }
+}
+
+class RoyalPalace extends Tiles {
+    RoyalPalace() {
+        this.name = "Royal Palace";
+        this.landPrice = 1400000;
+    }
+}
+
+class MerdekaSquare extends Tiles {
+    MerdekaSquare() {
+        this.name = "Merdeka Square";
+        this.landPrice = 1400000;
+    }
+}
+
+class AFamosaFort extends Tiles {
+    AFamosaFort() {
+        this.name = "A Famosa Fort";
+        this.landPrice = 1700000;
+    }
+}
+
+class KellieCastle extends Tiles {
+    KellieCastle() {
+        this.name = "Kellie Castle";
+        this.landPrice = 1800000;
+    }
+}
+
+class Stadthuys extends Tiles {
+    Stadthuys() {
+        this.name = "Stadthuys";
+        this.landPrice = 2000000;
+    }
+}
+
+class FreeParking extends Tiles {
+    FreeParking() {
+        this.name = "Free Parking";
+    }
+}
+
+class FraserHill extends Tiles {
+    FraserHill() {
+        this.name = "Fraser's Hill";
+        this.landPrice = 2200000;
+    }
+}
+
+class CameronHighlands extends Tiles {
+    CameronHighlands() {
+        this.name = "Cameron Highlands";
+        this.landPrice = 2200000;
+    }
+}
+
+class GentingHighland extends Tiles {
+    GentingHighland() {
+        this.name = "Genting Highland";
+        this.landPrice = 2200000;
     }
 }
