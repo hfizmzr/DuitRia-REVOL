@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
         
         int n=4, turn=0;
+        int[] totalDiceScore = new int[n];
         
         Players[] player = new Players[n];
-        int[] totalDiceScore = new int[n];
         Scanner sc = new Scanner(System.in);
         Dice dice = new Dice();
         Master master = new Master();
@@ -27,12 +27,15 @@ public class Main {
         
         dice.playerTurn(player, totalDiceScore);
 
-        while(true){
-            turn%=n;
-            master.move(turn, player, dice, tile);
-            
-            turn++;
+        while(master.play(player)){
+                turn%=n;
+                
+                if(player[turn].bankrupt==false)
+                    master.move(turn, player, dice, tile);
+
+                turn++;
         }
         
     }
 }
+    

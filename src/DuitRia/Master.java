@@ -1,10 +1,20 @@
 package DuitRia;
 
 public class Master {
-    public static void detectBankrupt(Players[] player, int playerAmount){
-        for(int i=0 ; i<playerAmount ; i++){
-            player[i].dead = player[i].isBankrupt();
+    public static void detectBankrupt(Players[] player){
+        for(int i=0 ; i<player.length ; i++){
+            player[i].bankrupt = player[i].isBankrupt();
         }
+    }
+    
+    public static boolean play(Players[] player){//Haizm: checks if there is more than one player alive
+        int alive = 0;
+        
+        for(int i=0 ; i<player.length ; i++){
+            if(player[i].bankrupt==false)
+                alive++;
+        }
+        return (alive>1);
     }
     
     public static void move(int turn, Players[] player, Dice dice, Tiles[] tile){
@@ -12,6 +22,36 @@ public class Master {
         int position = player[turn].position;
         System.out.println(player[turn].Name + " landed on " + position + "." + tile[position].name);
         
+        if(tile[position].fate){
+            //fate()
+        }
+        else if(tile[position].tax){
+            //tax()
+        }
+        else if(tile[position].station && tile[position].unowned){
+            //buy
+        }
+        else if(tile[position].commodity && tile[position].unowned){
+            //buy()
+        }
+        else if(tile[position].jail){
+            //nothing happen just visiting
+        }
+        else if(tile[position].unowned){
+            //this is a tile that player can buy house on
+            //buy()
+        }
+        else if(tile[position].owner!=turn){
+            //rent
+        }
+        else if(tile[position].house<4){
+            //buyhouse
+        }
+        //ask if user want to sell or mortgage property
+        //mortgage
+        //sell
+        
+        detectBankrupt(player);
     }
     
     public static void initializeTiles(Tiles[] tile){//Hazim: create object for tiles in the array

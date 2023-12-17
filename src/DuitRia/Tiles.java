@@ -3,20 +3,20 @@ package DuitRia;
 import java.util.Scanner;
 
 public class Tiles{
-    public int house = 0, housePrice, landPrice;
-    public boolean mortgaged = false, fate = false, tax = false, station = false, commodity = false, jail = false, go = false;
+    public int house = 0, housePrice, landPrice, owner = -1;
+    public boolean mortgaged = false, fate = false, tax = false, station = false, commodity = false, jail = false, go = false, unowned = true;
     String name;
     
     public void mortgage(Players player){
         if(house>0){
-            player.money+=housePrice/2*house;
+            player.Balance+=housePrice/2*house;
             house = 0;
         }
-        player.money+=landPrice/2;
+        player.Balance+=landPrice/2;
         mortgaged = true;
     }
     public void unmortgaged(Players player){
-        player.money -= (landPrice/2) + (landPrice/20);
+        player.Balance -= (landPrice/2) + (landPrice/20);
         mortgaged = false;
     }
 }

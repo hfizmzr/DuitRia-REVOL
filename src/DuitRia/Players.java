@@ -7,20 +7,19 @@ import java.util.Scanner;
 public class Players {
     
 	public String Name; // change to public *Hazim
-	public int Balance;
+	public int Balance, netWorth;
+        public boolean bankrupt = false;
 	private Map<String, Properties> properties;
 	public int position = 0;
         Scanner sc = new Scanner(System.in);
-	
-	
-    public int money = 15000000, netWorth = 15000000;
     
     //commit note: syahir
     //tambah function player, beli jual, sewa, bayar sewa, beli rumah. jual rumah belom
     
-    public Players(String name, int StartingBalance) {
+    public Players(String name, int StartingBalance){
     	this.Name = name;
     	this.Balance = StartingBalance;
+    	this.netWorth = StartingBalance;
     	this.properties = new HashMap<>();
 
 	this.position = 0;
@@ -106,15 +105,7 @@ public class Players {
     	}
     	
     }
-    
-    
-    
-    
-    
-    
-    
-    boolean dead = false;
-    
+
     public void movement(Dice dice){
             //commit am betulkan movement;
             System.out.print("It is " + Name + " turn");//Hazim: tambah prompt.
@@ -131,9 +122,9 @@ public class Players {
     
     public void salary(){
         System.out.println("You just past GO(Collect RM 2M)");
-        money+=2000000;
+        Balance+=2000000;
         netWorth+=2000000;
-        System.out.println("Your money is RM " + money);
+        System.out.println("Your money is RM " + Balance);
         System.out.println("Your net worth is RM " + netWorth);
     }
     

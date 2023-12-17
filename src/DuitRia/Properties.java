@@ -29,8 +29,7 @@ public class Properties {
 							"KLCC", "Tax", "Sepang II Circuit" };
 	
 	
-	public void DisplayBoard(Properties daym) {
-		
+	public void DisplayBoard(Properties daym) {	
 		for (int i = 0; i < 40; i++) {
 			System.out.printf("[%d]: %s\n", i, daym.Board[i]);
 		}
