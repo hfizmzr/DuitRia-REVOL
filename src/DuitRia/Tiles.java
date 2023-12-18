@@ -202,6 +202,11 @@ class Tax extends Tiles{
         this.tax = true;
         this.name = "Tax";
     }
+    
+    public void CollectTax(Players player){
+        System.out.println("You have to pay tax");
+        player.Balance -= 2000000;
+    }
 } 
 
 class Station extends Tiles{
