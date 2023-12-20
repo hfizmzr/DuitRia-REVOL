@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         
-        int n=4, turn=0;
+        int n=2, turn=0;
         int[] totalDiceScore = new int[n];
+        int total = 10;
         
         Players[] player = new Players[n];
         Scanner sc = new Scanner(System.in);
         Dice dice = new Dice();
         Master master = new Master();
-        Tiles[] tile = new Tiles[40];
+        Tiles[] tile = new Tiles[total];
         
         master.initializeTiles(tile);
         

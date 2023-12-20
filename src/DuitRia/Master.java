@@ -18,39 +18,38 @@ public class Master {
     }
     
     public static void move(int turn, Players[] player, Dice dice, Tiles[] tile){
+        
         player[turn].movement(dice);
         int position = player[turn].position;
         System.out.println(player[turn].Name + " landed on " + position + "." + tile[position].name);
         
-        if(tile[position].fate){
+        if(tile[position].nothing);
+        else if(tile[position].fate){
             //fate()
         }
         else if(tile[position].tax){
-            //tax()
+            player[turn].collectTax();
         }
         else if(tile[position].station && tile[position].unowned){
-            //buy
-        }
-        else if(tile[position].commodity && tile[position].unowned){
-            //buy()
+            player[turn].buyProperties(tile[position], turn);
         }
         else if(tile[position].jail){
-            //nothing happen just visiting
+            //jail;
         }
         else if(tile[position].unowned){
-            //this is a tile that player can buy house on
-            //buy()
+            player[turn].buyProperties(tile[position], turn);
         }
         else if(tile[position].owner!=turn){
-            //rent
+            player[turn].payRent(tile[position], player);
         }
         else if(tile[position].house<4){
-            //buyhouse
+            player[turn].buyHouse(tile[position]);
         }
         //ask if user want to sell or mortgage property
         //mortgage
         //sell
-        
+        System.out.println(player[turn].Name + " Balance: RM" + player[turn].Balance);
+        System.out.println(player[turn].Name + " netWorth: RM" + player[turn].netWorth);
         detectBankrupt(player);
     }
     
@@ -65,7 +64,7 @@ public class Master {
         tile[7] = new FateTile();
         tile[8] = new BatuCaves();
         tile[9] = new SriMahaMariammanTemple(); 
-        tile[10] = new Nothing("Visiting jail");
+        /*tile[10] = new Nothing("Visiting jail");
         tile[11] = new NationalMuseum();
         tile[12] = new TenagaNationalBerhad();
         tile[13] = new RoyalPalace();
@@ -94,7 +93,7 @@ public class Master {
         tile[36] = new FateTile();
         tile[37] = new KLCC();
         tile[38] = new Tax();
-        tile[39] = new Sepang2Circuit();
+        tile[39] = new Sepang2Circuit();*/
     }
 }
 //

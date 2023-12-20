@@ -1,4 +1,3 @@
-
 package DuitRia;
 
 import java.util.Random;
