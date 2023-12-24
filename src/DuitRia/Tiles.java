@@ -1,26 +1,23 @@
 package DuitRia;
 
-import java.util.Scanner;
-
 public class Tiles{
-    public int house = 0, housePrice = 200000, landPrice, owner = 0;
-    public boolean mortgaged = false, fate = false, tax = false, station = false, jail = false, go = false, nothing = false, goToJail = false, unowned = false;
+    public int house = 0, housePrice = 200000, landPrice, owner = -1;
+    public boolean mortgaged = false, fate = false, tax = false, station = false, go = false, nothing = false, goToJail = false, unowned = true, rail = false;
+    String color = "default";
     String name;
     public int[] rent = new int[5];
     
-    public void mortgage(Players player){
-        if(house>0){
-            player.Balance+=housePrice/2*house;
-            house = 0;
+    public int getRent(Tiles[] tile){
+        boolean monopoly = true;
+        for(int i=0 ; i<tile.length ; i++){
+            if(tile[i].color.equals(this.color) && tile[i].owner != this.owner){
+                monopoly = false;
+            }
         }
-        player.Balance+=landPrice/2;
-        mortgaged = true;
-    }
-    public void unmortgaged(Players player){
-        player.Balance -= (landPrice/2) + (landPrice/20);
-        mortgaged = false;
-    }
-    public int getRent(){
+        if(monopoly){
+            rent[0]*=2;
+        }
+        
         return rent[house];
     }
 }
@@ -33,6 +30,7 @@ class PetalingStreet extends Tiles{
         rent[2] = 320000;
         rent[3] = 520000;
         rent[4] = 720000;
+        this.color = "green";
         this.name = "Petaling Street";
         this.landPrice = 600000;
     }
@@ -44,6 +42,7 @@ class JonkerStreet extends Tiles{
         rent[2] = 320000;
         rent[3] = 520000;
         rent[4] = 720000;
+        this.color = "green";
         this.name = "Jonker Street";
         this.landPrice = 600000;
     }
@@ -55,6 +54,7 @@ class MasjidJamek extends Tiles{
         rent[2] = 400000;
         rent[3] = 600000;
         rent[4] = 800000;
+        this.color = "blue";
         this.name = "Masjed Jamek";
         this.landPrice = 1000000;
     }
@@ -66,6 +66,7 @@ class BatuCaves extends Tiles{
         rent[2] = 400000;
         rent[3] = 600000;
         rent[4] = 800000;
+        this.color = "blue";
         this.name = "Batu Caves";
         this.landPrice = 1000000;
     }
@@ -77,6 +78,7 @@ class SriMahaMariammanTemple extends Tiles{
         rent[2] = 420000;
         rent[3] = 620000;
         rent[4] = 820000;
+        this.color = "blue";
         this.name = "Sri Maha Mariamman Temple";
         this.landPrice = 1200000;
     }
@@ -89,6 +91,7 @@ class NationalMuseum extends Tiles {
         rent[2] = 480000;
         rent[3] = 680000;
         rent[4] = 880000;
+        this.color = "brown";
         this.name = "National Meseum";
         this.landPrice = 1400000;
     }
@@ -113,6 +116,7 @@ class RoyalPalace extends Tiles {
         rent[2] = 480000;
         rent[3] = 680000;
         rent[4] = 880000;
+        this.color = "brown";
         this.name = "Royal Palace";
         this.landPrice = 1400000;
     }
@@ -125,6 +129,7 @@ class MerdekaSquare extends Tiles {
         rent[2] = 480000;
         rent[3] = 680000;
         rent[4] = 880000;
+        this.color = "brown";
         this.name = "Merdeka Square";
         this.landPrice = 1400000;
     }
@@ -137,6 +142,7 @@ class AFamosaFort extends Tiles {
         rent[2] = 540000;
         rent[3] = 740000;
         rent[4] = 840000;
+        this.color = "light blue";
         this.name = "A Famosa Fort";
         this.landPrice = 1700000;
     }
@@ -149,6 +155,7 @@ class KellieCastle extends Tiles {
         rent[2] = 560000;
         rent[3] = 760000;
         rent[4] = 860000;
+        this.color = "light blue";
         this.name = "Kellie Castle";
         this.landPrice = 1800000;
     }
@@ -161,6 +168,7 @@ class Stadthuys extends Tiles {
         rent[2] = 600000;
         rent[3] = 800000;
         rent[4] = 1000000;
+        this.color = "light blue";
         this.name = "Stadthuys";
         this.landPrice = 2000000;
     }
@@ -173,6 +181,7 @@ class FraserHill extends Tiles {
         rent[2] = 640000;
         rent[3] = 840000;
         rent[4] = 1040000;
+        this.color = "pink";
         this.name = "Fraser's Hill";
         this.landPrice = 2200000;
     }
@@ -185,6 +194,7 @@ class CameronHighlands extends Tiles {
         rent[2] = 640000;
         rent[3] = 840000;
         rent[4] = 1040000;
+        this.color = "pink";
         this.name = "Cameron Highlands";
         this.landPrice = 2200000;
     }
@@ -197,6 +207,7 @@ class GentingHighland extends Tiles {
         rent[2] = 680000;
         rent[3] = 880000;
         rent[4] = 1080000;
+        this.color = "pink";
         this.name = "Genting Highland";
         this.landPrice = 2200000;
     }
@@ -209,6 +220,7 @@ class PahangNationalPark extends Tiles {
         rent[2] = 720000;
         rent[3] = 920000;
         rent[4] = 1120000;
+        this.color = "orange";
         this.name = "Pahang National Park";
         this.landPrice = 2600000;
     }
@@ -233,6 +245,7 @@ class GunungMuluNationalPark extends Tiles {
         rent[2] = 720000;
         rent[3] = 920000;
         rent[4] = 1120000;
+        this.color = "orange";
         this.name = "Gunun Mulu National Park";
         this.landPrice = 2600000;
     }
@@ -245,6 +258,7 @@ class KinabaluNationalPark extends Tiles {
         rent[2] = 740000;
         rent[3] = 940000;
         rent[4] = 1140000;
+        this.color = "orange";
         this.name = "Kinabalu National Park";
         this.landPrice = 2700000;
     }
@@ -257,6 +271,7 @@ class TiomanIslands extends Tiles {
         rent[2] = 800000;
         rent[3] = 100000;
         rent[4] = 1200000;
+        this.color = "red";
         this.name = "Tioman Islands";
         this.landPrice = 3000000;
     }
@@ -269,6 +284,7 @@ class PerhentianIslands extends Tiles {
         rent[2] = 800000;
         rent[3] = 100000;
         rent[4] = 1200000;
+        this.color = "red";
         this.name = "Perhentian Islands";
         this.landPrice = 3000000;
     }
@@ -281,6 +297,7 @@ class SepadanIslands extends Tiles {
         rent[2] = 820000;
         rent[3] = 120000;
         rent[4] = 1220000;
+        this.color = "red";
         this.name = "Sepadan Islands";
         this.landPrice = 3200000;
     }
@@ -293,6 +310,7 @@ class KLCC extends Tiles {
         rent[2] = 900000;
         rent[3] = 1100000;
         rent[4] = 1230000;
+        this.color = "yellow";
         this.name = "KLCC";
         this.landPrice = 3500000;
     }
@@ -305,6 +323,7 @@ class Sepang2Circuit extends Tiles {
         rent[2] = 1000000;
         rent[3] = 1200000;
         rent[4] = 1400000;
+        this.color = "yellow";
         this.name = "Sepang II Circuit";
         this.landPrice = 4000000;
     }
@@ -326,7 +345,8 @@ class Tax extends Tiles{
 } 
 
 class Station extends Tiles{
-    Station(String name){
+    Station(String name, boolean rail){
+        this.rail = rail;
         rent[0] = 200000;
         this.station = true;
         this.name = name;

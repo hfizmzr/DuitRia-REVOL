@@ -7,7 +7,7 @@ public class Main {
         
         int n=2, turn=0;
         int[] totalDiceScore = new int[n];
-        int total = 10;
+        final int total = 40;
         
         Players[] player = new Players[n];
         Scanner sc = new Scanner(System.in);
