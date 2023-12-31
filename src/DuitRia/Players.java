@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Players {
     
 	public String Name; // change to public *Hazim
-	public int Balance, netWorth, totalHouse=0, round=0;
+	public int Balance, netWorth, totalHouse=0, round=0, tokenIndex;
         public boolean bankrupt = false, debt = false, jail = false;
 	private Map<String, Tiles> properties;
         private Map<String, Tiles> mortgaged;
