@@ -10,10 +10,12 @@ public class MouseInput implements MouseListener{
 
     GamePanel gamePanel;
     StartingPage startingPage;
+    GamePage gamePage;
     
     public MouseInput(GamePanel gamePanel){
         this.gamePanel = gamePanel;
         this.startingPage = gamePanel.startingPage;
+        this.gamePage = gamePanel.gamePage;
     }
 
     public void mouseEntered(MouseEvent e) {
@@ -25,6 +27,11 @@ public class MouseInput implements MouseListener{
                 //startingPage.playerButton[i].setIcon(new ImageIcon("ButtonBackground/StartButton/startButtonBGHover.png"));
             }
         }
+        for(int i=0 ; i<40 ; i++){
+            if(e.getSource() == gamePage.tileButton[i]){
+                gamePage.hoverTileButton(i);
+            }
+        }
     }
  
     public void mouseExited(MouseEvent e) {
@@ -34,6 +41,12 @@ public class MouseInput implements MouseListener{
         for(int i=0 ; i<3 ; i++){
             if(e.getSource() == startingPage.playerButton[i]){
                 //startingPage.playerButton[i].setIcon(new ImageIcon("ButtonBackground/StartButton/startButtonBG.png"));
+            }
+        }
+        
+        for(int i=0 ; i<40 ; i++){
+            if(e.getSource() == gamePage.tileButton[i]){
+                gamePage.exitTileButton(i);
             }
         }
     }

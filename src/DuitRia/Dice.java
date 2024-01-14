@@ -1,5 +1,6 @@
 package DuitRia;
 
+import Pages.GamePage;
 import java.util.Random;
 
 public class Dice {
@@ -14,6 +15,10 @@ public class Dice {
         
         int dice1 = rand.nextInt(6) + 1;
         int dice2 = rand.nextInt(6) + 1;
+        GamePage.dice1 = dice1-1;
+        GamePage.dice2 = dice2-1;
+        System.out.println("dice1 roll = " + dice1);
+        System.out.println("dice2 roll = " + dice2);
         int totalDice = dice1 + dice2;
         
         return totalDice;

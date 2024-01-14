@@ -3,16 +3,13 @@ package DuitRia;
 import java.util.Random;
 
 public class Master {
-    Jail jail = new Jail();
-    Random rand = new Random();
-    Fate fate = new Fate();
-    public void detectBankrupt(Players[] player){
+    public static void detectBankrupt(Players[] player){
         for(int i=0 ; i<player.length ; i++){
-            player[i].bankrupt = player[i].isBankrupt();
+            player[i].bankrupt = player[i].isBankrupt(i);
         }
     }
     
-    public boolean play(Players[] player){//Haizm: checks if there is more than one player alive
+    public static boolean play(Players[] player){//Haizm: checks if there is more than one player alive
         int alive = 0;
         
         for(int i=0 ; i<player.length ; i++){
@@ -20,60 +17,6 @@ public class Master {
                 alive++;
         }
         return (alive>1);
-    }
-    
-    public void move(int turn, Players[] player, Dice dice, Tiles[] tile){        
-            
-        player[turn].movement(dice, jail);
-        if(player[turn].jail){
-            detectBankrupt(player);
-            return;
-        }
-        int position = player[turn].position;
-        //int fateIndex = rand.nextInt(10)+1;
-        int fateIndex = 2;
-        System.out.println(player[turn].Name + " landed on " + position + "." + tile[position].name);
-        System.out.println("Round = " + player[turn].round);
-        if(player[turn].round<1)
-            return;
-        do{
-            position = player[turn].position;
-            
-            player[turn].debt = false;
-            if(tile[position].nothing);
-            else if(tile[position].fate){
-                fate.getFate(fateIndex, player, turn, tile, jail);
-            }
-            else if(tile[position].tax){
-                player[turn].payTax();
-            }
-            else if(tile[position].station){
-                if(tile[position].unowned)
-                    player[turn].buyProperties(tile[position], turn);
-                else if(tile[position].mortgaged == false)
-                    player[turn].payRent(tile, player);
-            }
-            else if(tile[position].goToJail){
-                jail.goToJail(player[turn]);
-            }
-            else if(tile[position].unowned){
-                player[turn].buyProperties(tile[position], turn);
-            }
-            else if(tile[position].owner!=turn){
-                if(tile[position].mortgaged == false)
-                    player[turn].payRent(tile, player);
-            }
-            else if(tile[position].house<4){
-                if(player[turn].round>=3)
-                    player[turn].buyHouse(tile[position]);
-            }
-            player[turn].mortgageProperties();
-            player[turn].unmortgageProperties();
-            player[turn].sellProperties();
-        }while(player[turn].debt);
-        System.out.println(player[turn].Name + " Balance: RM" + player[turn].Balance);
-        System.out.println(player[turn].Name + " netWorth: RM" + player[turn].netWorth);
-        detectBankrupt(player);
     }
     
     public static void initializeTiles(Tiles[] tile){//Hazim: create object for tiles in the array

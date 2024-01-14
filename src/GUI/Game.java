@@ -45,6 +45,8 @@ public class Game implements Runnable{
                 DeltaF--;
                 gamePanel.repaint();
                 gamePanel.revalidate();
+                gamePanel.gamePage.repaint();
+                gamePanel.startingPage.repaint();
                 frame++;
             }
             
@@ -57,14 +59,15 @@ public class Game implements Runnable{
                     
             if(System.currentTimeMillis() - lastCheck >=1000){
                 lastCheck = System.currentTimeMillis();
-                System.out.println("\nPlayer Amount = " + gamePanel.playerAmount);
-                if(!(gamePanel.player==null))
+                /*System.out.println("\nPlayer Amount = " + gamePanel.playerAmount);
+                if(!(gamePanel.player==null)){
                     for(int i=0 ; i<gamePanel.playerAmount ; i++){
                         System.out.println("Player " + (i+1) + ": " + gamePanel.player[i].Name);
                         System.out.println("Player " + (i+1) + ": " + "token "+ gamePanel.player[i].tokenIndex);
                     }
+                }
                 System.out.println("FPS = " + frame);
-                System.out.println("UPS = " + update);
+                System.out.println("UPS = " + update);*/
                 frame = 0;
                 update = 0;
             }

@@ -4,7 +4,7 @@ public class Tiles{
     public int house = 0, housePrice = 200000, landPrice, owner = -1;
     public boolean mortgaged = false, fate = false, tax = false, station = false, go = false, nothing = false, goToJail = false, unowned = true, rail = false;
     String color = "default";
-    String name;
+    public String name;
     public int[] rent = new int[5];
     
     public int getRent(Tiles[] tile){
